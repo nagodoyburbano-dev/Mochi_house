@@ -1,13 +1,69 @@
+/* LA CLIENTA QUIERE QUE LA PAGINA TENGA COLORES PASTELES PERO DANDO ENFASIS AL MORADO Y AL CELESTE
+   PARA LLEVARSE DE LA MANO CON EL LOGO ORIGINAL*/ 
+/* Preguntaré por alguna mascota para complementar el sitio luego que pongas ese detalle de diseño en la página*/
 body {
     background-color: #fffaf0;
-    font-family: Arial, sans-serif;
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
     text-align: center;
     padding: 20px;
     margin: 0;
 }
 
-header h1 { font-size: 24px; color: #333; }
-header span { color: #d4a373; }
+header {
+    display: flex;
+    justify-content: center; 
+    align-items: center;    
+    min-height: 100px;     
+    position: relative;      
+    max-width: 1200px;       
+    margin: 0 auto 30px auto;
+    padding: 0 15px;         
+    box-sizing: border-box;
+}
+
+
+.logo-principal {
+    position: absolute;    
+    left: -100px;             
+    height: 200px;           
+    width: auto;             
+}
+
+.header-textos {
+    display: flex;
+    flex-direction: column;  
+    gap: 4px;                
+    text-align: center;     
+    font-weight: bold;
+    letter-spacing: 2px; 
+}
+
+header h1 { 
+    font-size: 40px; 
+    color: #333; 
+    margin: 0;    
+}
+
+header span { 
+    color: #cd73d4; 
+    font-size: 25px; 
+    display: block;
+    margin: 0;
+}
+
+header p {
+    font-size: small;
+    margin: 0; 
+}
+
+main h2{
+    max-width: 1200px;
+    margin: 40px auto 10px auto;
+    text-align: left;
+    padding: 0 15px;
+    box-sizing: border-box;
+
+}
 
 .grid-productos {
     display: grid;
@@ -22,6 +78,12 @@ header span { color: #d4a373; }
     padding: 15px;
     border-radius: 15px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.producto:hover {
+    transform: translateY(-8px); 
+    box-shadow: 0 12px 20px rgba(0,0,0,0.15); 
 }
 
 .imagen-producto {
@@ -37,10 +99,35 @@ footer button {
     background-color: #25d366;
     color: white;
     border: none;
-    padding: 15px 30px;
+    padding: 15px 35px;       
     font-size: 18px;
     border-radius: 50px;
     cursor: pointer;
     font-weight: bold;
     margin-top: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+                background-color 0.2s ease, 
+                box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(37, 211, 102, 0.2);
 }   
+
+.logo-whatsapp {
+    width: 24px;
+    height: 24px;
+    fill: white;
+}
+
+footer button:hover {
+    background-color: #20ba5a; 
+    transform: translateY(-4px) scale(1.05); 
+    box-shadow: 0 10px 20px rgba(37, 211, 102, 0.4); 
+}
+
+footer button:active {
+    transform: translateY(-1px) scale(0.98);
+    box-shadow: 0 4px 8px rgba(37, 211, 102, 0.3);
+}
