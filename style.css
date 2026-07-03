@@ -77,53 +77,16 @@ Cualquier cambio de color, tamaño o fuente se puede hacer aquí.
 */
 header {
     margin-bottom: 30px;
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    align-items: center;
-    gap: 20px;
-}
-
-.header-logo {
     display: flex;
-    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
 }
 
 .header-textos {
     text-align: center;
 }
 
-.logo-principal {
-    width: 140px;
-    max-width: 100%;
-    border-radius: 50%;
-    border: 4px solid rgba(255, 255, 255, 0.8);
-    box-shadow: 0 15px 30px rgba(155, 137, 213, 0.18);
-}
-
-.header-mascota {
-    width: 120px;
-    min-height: 120px;
-    padding: 14px;
-    border-radius: 28px;
-    background: rgba(255, 255, 255, 0.94);
-    border: 2px dashed rgba(155, 137, 213, 0.4);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 12px 28px rgba(155, 137, 213, 0.12);
-    color: #8f7ad4;
-    font-size: 0.9rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-}
-
-.header-mascota img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 22px;
-}
 
 .header-textos h1 {
     font-size: clamp(2.4rem, 6vw, 3.5rem);
