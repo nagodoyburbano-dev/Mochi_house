@@ -74,7 +74,7 @@ main h2{
 }
 
 .producto {
-    background: white;
+    background: rgb(191, 225, 238);
     padding: 15px;
     border-radius: 15px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
