@@ -9,7 +9,8 @@ Si quieres modificar algún apartado del fondo, solo tocas esta parte
 body {
     position: relative;
     min-height: 100vh;
-    background: radial-gradient(circle at top left, rgba(155, 137, 213, 0.18), transparent 28%),
+    background: url('fondo.png') center/cover fixed no-repeat,
+                radial-gradient(circle at top left, rgba(155, 137, 213, 0.18), transparent 28%),
                 radial-gradient(circle at top right, rgba(137, 207, 240, 0.18), transparent 32%),
                 linear-gradient(180deg, #f8eff8 0%, #fdf5fd 45%, #eef7fe 100%);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
