@@ -23,25 +23,6 @@ main {
     padding-bottom: 30px;
 }
 
-main::before {
-    content: '✦ ✧ ✦';
-    position: absolute;
-    top: 140px;
-    right: 8%;
-    font-size: 2rem;
-    color: #ffdfba;
-    opacity: 0.55;
-}
-
-main::after {
-    content: '✧ ✦ ✧';
-    position: absolute;
-    top: 520px;
-    left: 10%;
-    font-size: 1.5rem;
-    color: #dfbaff;
-    opacity: 0.45;
-}
 
 /*
 Estilos para el header y los textos principales de la página web de Mochi Wen.
@@ -147,20 +128,8 @@ Si quires cambiar el tamaño de los productos o el espacio entre ellos, puedes m
     opacity: 0.7;
 }
 
-.producto::before {
-    top: 18px;
-    right: 18px;
-}
 
-.producto::after {
-    bottom: 18px;
-    left: 18px;
-}
 
-.producto:hover {
-    transform: translateY(-6px) scale(1.02);
-    box-shadow: 0 24px 48px rgba(155, 137, 213, 0.2);
-}
 
 .imagen-producto {
     background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.95), rgba(153, 205, 242, 0.35) 45%),
@@ -173,25 +142,17 @@ Si quires cambiar el tamaño de los productos o el espacio entre ellos, puedes m
     overflow: hidden;
 }
 
-.imagen-producto::before,
-.imagen-producto::after {
-    content: '❤';
-    position: absolute;
-    font-size: 1.5rem;
-    color: rgba(255, 161, 201, 0.7);
-    opacity: 0.65;
+.imagen-producto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 24px;
 }
 
 .imagen-producto::before {
     top: 18px;
     left: 18px;
-}
-
-.imagen-producto::after {
-    bottom: 18px;
-    right: 18px;
-    content: '✧';
-    color: rgba(255, 255, 255, 0.75);
 }
 
 .producto h3 {
