@@ -1,4 +1,4 @@
-/*
+﻿/*
 Sección del body y estilos generales para la página web de Mochi Wen.
 Si quieres modificar algún apartado del fondo, solo tocas esta parte
 */
@@ -140,6 +140,20 @@ Si quires cambiar el tamaño de los productos o el espacio entre ellos, puedes m
     border: 2px dashed rgba(155, 137, 213, 0.22);
     position: relative;
     overflow: hidden;
+}
+
+.imagen-producto:empty::after {
+    content: "Próximamente";
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #7a7baf;
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
 }
 
 .imagen-producto img {
