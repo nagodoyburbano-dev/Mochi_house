@@ -475,3 +475,25 @@ footer button:disabled {
         grid-template-columns: 1fr 1fr;
         gap: 10px;
     }
+
+    .producto-secundario {
+        min-height: 180px;
+        padding: 8px;
+    }
+
+    .carrito-panel {
+        margin-top: 18px;
+        padding: 14px;
+    }
+
+    .pedido-controls {
+        justify-content: center;
+    }
+
+    footer button {
+        width: 100%;
+        justify-content: center;
+        padding: 14px 20px;
+        font-size: 0.95rem;
+    }
+}
