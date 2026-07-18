@@ -48,11 +48,13 @@ function renderizarCarrito() {
 document.querySelectorAll('.producto').forEach((card, index) => {
     const titulo = card.querySelector('h3');
     const precioEl = card.querySelector('.precio');
-    const tieneImagen = card.querySelector('.imagen-producto img');
 
     if (!titulo) return;
 
-    if (!tieneImagen) {
+    const precioTexto = precioEl ? precioEl.textContent.trim() : '';
+    const tienePrecio = precioTexto !== '';
+
+    if (!tienePrecio) {
         card.classList.add('producto-sin-pedido');
         return;
     }
@@ -65,18 +67,33 @@ document.querySelectorAll('.producto').forEach((card, index) => {
     controls.className = 'pedido-controls';
     controls.innerHTML = `
         <label class="cantidad-label" for="${id}">Cant.</label>
-        <input type="number" class="cantidad-input" id="${id}" min="1" value="1">
+        <div class="cantidad-bloque">
+            <button type="button" class="btn-cantidad btn-cantidad-subir" aria-label="Aumentar cantidad">+</button>
+            <input type="number" class="cantidad-input" id="${id}" min="1" value="1">
+            <button type="button" class="btn-cantidad btn-cantidad-bajar" aria-label="Disminuir cantidad">−</button>
+        </div>
         <button type="button" class="btn-agregar">Agregar</button>
     `;
 
     card.appendChild(controls);
 
+    const input = controls.querySelector('.cantidad-input');
+
     controls.querySelector('.btn-agregar').addEventListener('click', () => {
-        const input = controls.querySelector('.cantidad-input');
         agregarAlCarrito(nombre, precio, input.value);
         if (input.value && parseInt(input.value, 10) >= 1) {
             input.value = 1;
         }
+    });
+
+    controls.querySelector('.btn-cantidad-subir').addEventListener('click', () => {
+        const valorActual = parseInt(input.value, 10) || 1;
+        input.value = valorActual + 1;
+    });
+
+    controls.querySelector('.btn-cantidad-bajar').addEventListener('click', () => {
+        const valorActual = parseInt(input.value, 10) || 1;
+        input.value = Math.max(1, valorActual - 1);
     });
 });
 
