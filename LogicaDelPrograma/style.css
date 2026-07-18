@@ -310,14 +310,36 @@ footer {
     color: #6d57b2;
 }
 
+.cantidad-bloque {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
 .cantidad-input {
-    width: 58px;
+    width: 54px;
     border: 1px solid rgba(155, 137, 213, 0.3);
-    border-radius: 12px;
-    padding: 7px 8px;
+    border-radius: 10px;
+    padding: 6px 6px;
     text-align: center;
     font-weight: 700;
     color: #5e4d95;
+}
+
+.btn-cantidad {
+    width: 24px;
+    height: 24px;
+    border: none;
+    border-radius: 8px;
+    background: #e8dcff;
+    color: #6d57b2;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
 }
 
 .btn-agregar {
@@ -453,25 +475,3 @@ footer button:disabled {
         grid-template-columns: 1fr 1fr;
         gap: 10px;
     }
-
-    .producto-secundario {
-        min-height: 180px;
-        padding: 8px;
-    }
-
-    .carrito-panel {
-        margin-top: 18px;
-        padding: 14px;
-    }
-
-    .pedido-controls {
-        justify-content: center;
-    }
-
-    footer button {
-        width: 100%;
-        justify-content: center;
-        padding: 14px 20px;
-        font-size: 0.95rem;
-    }
-}
