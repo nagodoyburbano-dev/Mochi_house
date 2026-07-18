@@ -1,4 +1,4 @@
-﻿/*
+/*
 Sección del body y estilos generales para la página web de Mochi Wen.
 Si quieres modificar algún apartado del fondo, solo tocas esta parte
 */
@@ -10,12 +10,12 @@ body {
     position: relative;
     min-height: 100vh;
     text-align: center;
-    padding: 30px 20px 50px;
+    padding: 24px 18px 48px;
     margin: 0;
     overflow-x: hidden;
-    font-family: 'Comic Sans MS', cursive;
+    font-family: 'Comic Neue', 'Comic Sans MS', 'Trebuchet MS', cursive;
     background: linear-gradient(135deg, #e8dbfc, #d4f0fc);
-    
+    line-height: 1.5;
 }
 
 main {
@@ -30,16 +30,18 @@ Cualquier cambio de color, tamaño o fuente se puede hacer aquí.
 */
 
 header {
-    margin-bottom: 30px;
+    margin-bottom: 28px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 5px; /* Reducido de 15px a 5px para acercar el logo */
+    gap: 6px;
 }
 
 .logo-principal {
-    margin-bottom: -20px; /* Al ser negativo, atrae al texto hacia la imagen */
-    width: 350px;
+    margin-bottom: -12px;
+    width: min(100%, 360px);
+    max-width: 360px;
+    height: auto;
 }
 
 .header-textos {
@@ -57,14 +59,14 @@ header {
 
 .header-textos span {
     color: #7dc4f1;
-    font-size: 1.85rem;
+    font-size: clamp(1.1rem, 3.8vw, 1.8rem);
     font-weight: 700;
     font-style: italic;
-    font-family: 'Brush Script MT', 'Comic Sans MS', cursive;
+    font-family: 'Comic Neue', 'Comic Sans MS', 'Trebuchet MS', cursive;
     display: block;
     letter-spacing: 1px;
     text-shadow: 1px 1px 2px rgba(155, 137, 213, 0.3);
-    margin-top: 0; /* Reducido de 5px a 0 para pegar más el texto */
+    margin-top: 0;
 }
 
 .ubicacion {
@@ -77,9 +79,10 @@ header {
 
 main h2 {
     color: #8f7ad4;
-    margin: 40px auto 20px;
-    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    margin: 36px auto 18px;
+    font-size: clamp(1.3rem, 2.7vw, 2rem);
     position: relative;
+    line-height: 1.2;
 }
 
 main h2::after {
@@ -98,48 +101,51 @@ Si quires cambiar el tamaño de los productos o el espacio entre ellos, puedes m
 */
 .grid-productos {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 30px;
-    max-width: 1040px;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 24px;
+    max-width: 1100px;
     margin: 0 auto;
     padding: 0 10px;
+    align-items: stretch;
 }
 
 .producto {
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(241, 236, 252, 0.95));
-    padding: 24px;
-    border-radius: 32px;
+    padding: 16px;
+    border-radius: 24px;
     border: 1px solid rgba(255, 255, 255, 0.8);
-    box-shadow: 0 18px 40px rgba(155, 137, 213, 0.12);
+    box-shadow: 0 12px 28px rgba(155, 137, 213, 0.12);
     transition: transform 0.35s ease, box-shadow 0.35s ease;
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 250px;
+    height: 100%;
 }
 
 .producto::before,
 .producto::after {
-    content: '';
-    position: absolute;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.8);
-    box-shadow: 0 0 0 5px rgba(137, 207, 240, 0.25);
-    opacity: 0.7;
+    content: none;
 }
 
 
 
 
 .imagen-producto {
-    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.95), rgba(153, 205, 242, 0.35) 45%),
-                linear-gradient(135deg, rgba(155, 137, 213, 0.18), rgba(137, 207, 240, 0.18));
-    height: 180px;
-    margin-bottom: 18px;
-    border-radius: 26px;
-    border: 2px dashed rgba(155, 137, 213, 0.22);
+    aspect-ratio: 1 / 1;
+    min-height: 140px;
+    margin-bottom: 12px;
     position: relative;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    background: transparent;
+    border: none;
+    border-radius: 0;
 }
 
 .imagen-producto:empty::after {
@@ -160,8 +166,10 @@ Si quires cambiar el tamaño de los productos o el espacio entre ellos, puedes m
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
     display: block;
-    border-radius: 24px;
+    border-radius: 18px;
+    margin: 0 auto;
 }
 
 .imagen-producto::before {
@@ -183,29 +191,158 @@ Si quires cambiar el tamaño de los productos o el espacio entre ellos, puedes m
     margin-bottom: 12px;
 }
 
+.grid-productos-secundarios {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+    max-width: 900px;
+}
+
+.producto-secundario {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 200px;
+    padding: 12px;
+}
+
+.producto-secundario .imagen-producto {
+    min-height: 120px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+}
+
+.producto-secundario .imagen-producto img {
+    width: 100%;
+    height: 70%;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    object-position: center;
+    padding: 0;
+    border-radius: 16px;
+}
+
 .precio {
     font-weight: 800;
     color: #759cdc;
     font-size: 1.1rem;
 }
 
+.producto-sin-pedido {
+    opacity: 0.75;
+    filter: grayscale(0.2);
+}
+
+.producto-sin-pedido .pedido-controls {
+    display: none;
+}
+
 footer {
     margin-top: 45px;
+}
+
+.carrito-panel {
+    max-width: 1040px;
+    margin: 24px auto 0;
+    padding: 16px 18px;
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(155, 137, 213, 0.18);
+    box-shadow: 0 10px 24px rgba(155, 137, 213, 0.1);
+}
+
+.carrito-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.carrito-header h3 {
+    margin: 0;
+    color: #6d57b2;
+    font-size: 1.05rem;
+}
+
+.btn-vaciar {
+    border: none;
+    background: #f4eafe;
+    color: #6d57b2;
+    padding: 7px 12px;
+    border-radius: 999px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.carrito-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 8px;
+}
+
+.carrito-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 10px;
+    border-radius: 12px;
+    background: rgba(241, 236, 252, 0.8);
+    color: #5e4d95;
+    font-size: 0.95rem;
+}
+
+.pedido-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.cantidad-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #6d57b2;
+}
+
+.cantidad-input {
+    width: 58px;
+    border: 1px solid rgba(155, 137, 213, 0.3);
+    border-radius: 12px;
+    padding: 7px 8px;
+    text-align: center;
+    font-weight: 700;
+    color: #5e4d95;
+}
+
+.btn-agregar {
+    border: none;
+    border-radius: 999px;
+    padding: 8px 12px;
+    background: linear-gradient(135deg, #9b89d5, #89cff0);
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
 }
 
 footer button {
     background: linear-gradient(135deg, #9b89d5, #89cff0);
     color: #fff;
     border: none;
-    padding: 16px 42px;
-    font-size: 1.15rem;
+    padding: 15px 38px;
+    font-size: 1rem;
     border-radius: 999px;
     cursor: pointer;
     font-weight: 700;
     display: inline-flex;
     align-items: center;
-    gap: 12px;
-    box-shadow: 0 18px 35px rgba(137, 207, 240, 0.24);
+    gap: 10px;
+    box-shadow: 0 16px 32px rgba(137, 207, 240, 0.24);
     transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
 }
 
@@ -215,26 +352,126 @@ footer button:hover {
     box-shadow: 0 22px 40px rgba(137, 207, 240, 0.32);
 }
 
+footer button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
 .logo-whatsapp {
     width: 22px;
     fill: white;
 }
 
-@media (max-width: 540px) {
+@media (max-width: 768px) {
     body {
-        padding: 25px 12px 40px;
+        padding: 18px 12px 40px;
     }
 
     header {
-        gap: 10px;
+        gap: 8px;
+    }
+
+    .logo-principal {
+        width: min(100%, 260px);
+        margin-bottom: 0;
     }
 
     .grid-productos {
-        gap: 22px;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 12px;
+        padding: 0 2px;
+    }
+
+    .producto {
+        padding: 10px;
+        border-radius: 18px;
+        min-height: 220px;
+    }
+
+    .imagen-producto {
+        min-height: 100px;
+        padding: 0;
+    }
+
+    .producto h3 {
+        font-size: 0.95rem;
+    }
+
+    .precio {
+        font-size: 0.9rem;
+    }
+
+    .grid-productos-secundarios {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 12px;
+    }
+
+    .producto-secundario {
+        min-height: 190px;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 540px) {
+    body {
+        padding: 14px 8px 32px;
+    }
+
+    .grid-productos {
+        grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+        gap: 8px;
+        padding: 0;
+    }
+
+    .producto {
+        padding: 8px;
+        min-height: 200px;
+    }
+
+    .imagen-producto {
+        min-height: 86px;
+        border-radius: 12px;
+    }
+
+    .imagen-producto img {
+        border-radius: 12px;
+    }
+
+    .producto h3 {
+        font-size: 0.82rem;
+        margin: 6px 0 4px;
+    }
+
+    .producto span,
+    .precio {
+        font-size: 0.75rem;
+    }
+
+    .grid-productos-secundarios {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .producto-secundario {
+        min-height: 180px;
+        padding: 8px;
+    }
+
+    .carrito-panel {
+        margin-top: 18px;
+        padding: 14px;
+    }
+
+    .pedido-controls {
+        justify-content: center;
     }
 
     footer button {
         width: 100%;
         justify-content: center;
+        padding: 14px 20px;
+        font-size: 0.95rem;
     }
 }
